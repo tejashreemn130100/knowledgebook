@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Error</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="crash-body">
+    <div class="crash-message">
+        <h1>Error: Webpage Crashed</h1>
+        <p>Something went wrong! Please refresh the page.</p>
+    </div>
+
+    <script>
+        // Check if the page has been refreshed
+        if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+            // Redirect to the actual birthday page after a refresh
+            window.location.href = "birthday.html";
+        }
+    </script>
+</body>
+</html>
