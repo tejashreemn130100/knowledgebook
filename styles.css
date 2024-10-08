@@ -1,0 +1,119 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica', sans-serif;
+}
+
+/* Styles for First Page (Crash Error) */
+.crash-body {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.crash-message {
+    text-align: center;
+}
+
+.crash-message h1 {
+    font-size: 2.5em;
+    color: red;
+}
+
+.crash-message p {
+    font-size: 1.2em;
+    margin-top: 20px;
+}
+
+/* Styles for Birthday Page */
+body {
+    background-color: #f7f3e9; /* Soft background */
+}
+
+.container {
+    text-align: center;
+    max-width: 800px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 2.5em;
+    color: #5D6D7E;
+}
+
+.message p {
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+.book-section {
+    margin-top: 30px;
+}
+
+.book-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    color: #8D6E63;
+}
+
+.book-shelf {
+    display: flex;
+    justify-content: space-around;
+}
+
+.book {
+    width: 120px;
+    height: 180px;
+    background-color: #D5C6A1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.book:hover {
+    background-color: #CBB59E;
+}
+
+.surprise-button {
+    margin-top: 30px;
+}
+
+.surprise-button button {
+    padding: 10px 20px;
+    background-color: #82B1FF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 1.2em;
+}
+
+.surprise-button button:hover {
+    background-color: #4D90FE;
+}
+
+.hidden {
+    display: none;
+}
+
+#surprise {
+    margin-top: 20px;
+    font-style: italic;
+    font-size: 1.3em;
+    color: #5D6D7E;
+}
