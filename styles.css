@@ -7,113 +7,162 @@
 
 body {
     font-family: 'Helvetica', sans-serif;
+    background-color: #f7f3e9;
+    overflow: hidden;
+    position: relative;
 }
 
-/* Styles for First Page (Crash Error) */
-.crash-body {
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-.crash-message {
-    text-align: center;
-}
-
-.crash-message h1 {
-    font-size: 2.5em;
-    color: red;
-}
-
-.crash-message p {
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-/* Styles for Birthday Page */
-body {
-    background-color: #f7f3e9; /* Soft background */
-}
-
-.container {
+.birthday-container {
     text-align: center;
     max-width: 800px;
-    background-color: white;
-    padding: 30px;
-    margin-top: 50px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10; /* Ensure the text is above hearts */
 }
 
-.header h1 {
-    font-size: 2.5em;
+h1, h2 {
+    margin: 20px 0;
+    font-size: 3em;
     color: #5D6D7E;
+    opacity: 0;
 }
 
-.message p {
-    margin: 15px 0;
-    font-size: 1.2em;
+h1.slide-right {
+    animation: slideInFromLeft 2s forwards;
 }
 
-.book-section {
-    margin-top: 30px;
+h2.slide-left {
+    animation: slideInFromRight 2s forwards;
 }
 
-.book-section h2 {
-    margin-bottom: 20px;
+.message-box p {
     font-size: 1.5em;
-    color: #8D6E63;
+    opacity: 0;
 }
 
-.book-shelf {
-    display: flex;
-    justify-content: space-around;
+.message-box p.fade-in {
+    animation: fadeIn 3s ease-in forwards;
+    animation-delay: 2s; /* Start after the title has slid in */
 }
 
-.book {
-    width: 120px;
-    height: 180px;
-    background-color: #D5C6A1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    border-radius: 4px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+/* Animations */
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.book:hover {
-    background-color: #CBB59E;
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.surprise-button {
-    margin-top: 30px;
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
-.surprise-button button {
-    padding: 10px 20px;
-    background-color: #82B1FF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: 1.2em;
+/* Heart Background Animation */
+.hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Place behind the content */
+    overflow: hidden;
+    pointer-events: none;
 }
 
-.surprise-button button:hover {
-    background-color: #4D90FE;
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    transform: rotate(45deg);
+    opacity: 0.7;
+    animation: float 5s infinite ease-in-out;
 }
 
-.hidden {
-    display: none;
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: pink;
+    border-radius: 50%;
 }
 
-#surprise {
-    margin-top: 20px;
-    font-style: italic;
-    font-size: 1.3em;
-    color: #5D6D7E;
+.heart:before {
+    top: -10px;
+    left: 0;
+}
+
+.heart:after {
+    left: 10px;
+    top: 0;
+}
+
+/* Randomize heart positions */
+.heart:nth-child(1) {
+    top: 20%;
+    left: 10%;
+    animation-duration: 7s;
+}
+
+.heart:nth-child(2) {
+    top: 50%;
+    left: 40%;
+    animation-duration: 8s;
+}
+
+.heart:nth-child(3) {
+    top: 30%;
+    left: 70%;
+    animation-duration: 6s;
+}
+
+.heart:nth-child(4) {
+    top: 80%;
+    left: 20%;
+    animation-duration: 9s;
+}
+
+.heart:nth-child(5) {
+    top: 60%;
+    left: 90%;
+    animation-duration: 7.5s;
+}
+
+/* Heart floating animation */
+@keyframes float {
+    0% {
+        transform: scale(0.5) translateY(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-800px);
+        opacity: 0;
+    }
 }
