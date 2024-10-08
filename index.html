@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Error</title>
+    <title>Oops! Page Crashed</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="crash-body">
-    <div class="crash-message">
-        <h1>Error: Webpage Crashed</h1>
-        <p>Something went wrong! Please refresh the page.</p>
+    <div class="crash-container">
+        <h1>Error: Webpage Crashed!</h1>
+        <p>Oops! Something went wrong.</p>
+        <p>We're sorry, but it looks like the webpage crashed. Try refreshing the page to see if that helps.</p>
     </div>
 
     <script>
-        // Check if the page has been refreshed
+        // If the page is refreshed, it redirects to the birthday page.
         if (performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-            // Redirect to the actual birthday page after a refresh
-            window.location.href = "birthday.html";
+            setTimeout(function() {
+                window.location.href = "birthday.html"; // Redirect after a delay
+            }, 2000); // Delay for 2 seconds to simulate crash
         }
     </script>
 </body>
