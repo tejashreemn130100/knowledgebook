@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Nagesh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Happy Birthday Nagesh</h1>
+        </div>
+        
+        <div class="message">
+            <p>Dear Nagesh,</p>
+            <p>Today is a special day, and I want to take a moment to remind you how much you mean to me. You’ve always been there, like a great book I can never put down. Here’s to many more chapters in our friendship!</p>
+            <p>Wishing you a year filled with joy, calmness, and great reads!</p>
+            <p>Love,</p>
+            <p>Tejashree</p>
+        </div>
+
+        <div class="book-section">
+            <h2>Books of Memories</h2>
+            <div class="book-shelf">
+                <div class="book" onclick="openBook('memory1')">Friendship Memories</div>
+                <div class="book" onclick="openBook('memory2')">Adventures Together</div>
+                <div class="book" onclick="openBook('memory3')">Shared Laughter</div>
+            </div>
+        </div>
+
+        <div class="surprise-button">
+            <button onclick="showSurprise()">Open a Surprise Book</button>
+        </div>
+
+        <div id="surprise" class="hidden">
+            <p>"A great friend is like a great book—timeless, full of wisdom, and always there for you."</p>
+        </div>
+    </div>
+
+    <script>
+        function openBook(memory) {
+            alert("Opening " + memory + "...");
+        }
+
+        function showSurprise() {
+            document.getElementById('surprise').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
